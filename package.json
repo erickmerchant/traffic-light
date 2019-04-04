@@ -1,0 +1,21 @@
+{
+  "name": "traffic-light",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@erickmerchant/dev-cli": "^8.5.1",
+    "@erickmerchant/framework": "^22.6.0",
+    "@erickmerchant/lint": "^2.2.0",
+    "eslint": "^5.16.0",
+    "stylelint": "^9.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "lint index.html",
+    "start": "dev serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
