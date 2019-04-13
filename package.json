@@ -6,9 +6,9 @@
   "dependencies": {
     "@erickmerchant/dev-cli": "^8.5.1",
     "@erickmerchant/framework": "^22.6.0",
-    "@erickmerchant/lint": "^2.2.0",
+    "@erickmerchant/lint": "^2.3.0",
     "eslint": "^5.16.0",
-    "stylelint": "^9.10.1"
+    "stylelint": "^10.0.0"
   },
   "devDependencies": {},
   "scripts": {
