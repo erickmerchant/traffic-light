@@ -51,8 +51,6 @@ const target = document.querySelector('body')
 
 const update = domUpdate(target)
 
-const {body, svg, circle, use, defs} = html
-
 const states = [
   {
     color: 'green',
@@ -80,6 +78,8 @@ const cycle = (commit, color = states[0]) => {
 
 const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
 
+const {lights} = html
+
 framework({
   state: null,
   update,
@@ -88,33 +88,33 @@ framework({
       setTimeout(() => cycle(commit), 0)
     }
 
-    return body({}, svg(
-      {
-        id: 'lights',
-        viewBox: '0 0 10 30',
-        xmlns: 'http://www.w3.org/2000/svg',
-        'xmlns:xlink': 'http://www.w3.org/1999/xlink'
-      },
-      use({
-        'xlink:href': '#light',
-        y: 0,
-        class: getClass(state, 'red')
-      }),
-      use({
-        'xlink:href': '#light',
-        y: 10,
-        class: getClass(state, 'yellow')
-      }),
-      use({
-        'xlink:href': '#light',
-        y: 20,
-        class: getClass(state, 'green')
-      }),
-      defs(
-        {},
-        circle({id: 'light', cx: 5, cy: 5, r: 4})
-      )
-    ))
+    return lights`<body>
+        <svg
+          id=lights
+          viewBox="0 0 10 30"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <use
+            y="0"
+            xlink:href="#light"
+            class=${getClass(state, 'red')}
+          />
+          <use
+            y="10"
+            xlink:href="#light"
+            class=${getClass(state, 'yellow')}
+          />
+          <use
+            y="20"
+            xlink:href="#light"
+            class=${getClass(state, 'green')}
+          />
+          <defs>
+            <circle id="light" cx="5" cy="5" r="4" />
+          </defs>
+        </svg>
+      </body>`
   }
 })
 </script>
