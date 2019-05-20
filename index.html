@@ -45,7 +45,7 @@
 <script type="module" crossorigin="anonymous">
 /* global document */
 
-import framework, {domUpdate, html} from '@erickmerchant/framework'
+import framework, {domUpdate, view} from '@erickmerchant/framework'
 
 const target = document.querySelector('body')
 
@@ -78,7 +78,7 @@ const cycle = (commit, color = states[0]) => {
 
 const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
 
-const {lights} = html
+const {lights} = view
 
 framework({
   state: null,
@@ -92,8 +92,6 @@ framework({
         <svg
           id=lights
           viewBox="0 0 10 30"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <use
             y="0"
