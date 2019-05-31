@@ -1,119 +1,125 @@
 <!DOCTYPE html>
-<style>
-  body {
-    margin: 0;
-  }
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        margin: 0;
+      }
 
-  #lights {
-    display: block;
-    margin: 5vh auto;
-    height: 90vh;
-    background-size: 2px 2px;
-    background-color: hsl(0, 0%, 90%);
-    background-image:
-      linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
-    border-radius: 1em;
-    border: 2px solid hsl(0, 0%, 50%);
-  }
+      #lights {
+        display: block;
+        margin: 5vh auto;
+        height: 90vh;
+        background-size: 2px 2px;
+        background-color: hsl(0, 0%, 90%);
+        background-image:
+          linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
+          linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
+        border-radius: 1em;
+        border: 2px solid hsl(0, 0%, 50%);
+      }
 
-  #lights use {
-    transition: fill 1s;
-  }
+      #lights use {
+        transition: fill 1s;
+      }
 
-  #light {
-    stroke: hsl(0, 0%, 50%);
-    stroke-width: 0.125;
-  }
+      #light {
+        stroke: hsl(0, 0%, 50%);
+        stroke-width: 0.125;
+      }
 
-  .red {
-    fill: hsla(350, 70%, 60%, 70%);
-  }
+      .red {
+        fill: hsla(350, 70%, 60%, 70%);
+      }
 
-  .yellow {
-    fill: hsla(50, 70%, 60%, 70%);
-  }
+      .yellow {
+        fill: hsla(50, 70%, 60%, 70%);
+      }
 
-  .green {
-    fill: hsla(110, 70%, 60%, 70%);
-  }
+      .green {
+        fill: hsla(110, 70%, 60%, 70%);
+      }
 
-  .gray {
-    fill: hsla(0, 0%, 60%, 70%);
-  }
-</style>
-<script type="module" crossorigin="anonymous">
-/* global document */
+      .gray {
+        fill: hsla(0, 0%, 60%, 70%);
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" crossorigin="anonymous">
+    /* global document */
 
-import framework, {domUpdate, view} from '@erickmerchant/framework'
+    import framework, {domUpdate, view} from '@erickmerchant/framework'
 
-const target = document.querySelector('body')
+    const target = document.querySelector('body')
 
-const update = domUpdate(target)
+    const update = domUpdate(target)
 
-const states = [
-  {
-    color: 'green',
-    duration: 5000
-  },
-  {
-    color: 'yellow',
-    duration: 1000
-  },
-  {
-    color: 'red',
-    duration: 5000
-  }
-]
+    const states = [
+      {
+        color: 'green',
+        duration: 5000
+      },
+      {
+        color: 'yellow',
+        duration: 1000
+      },
+      {
+        color: 'red',
+        duration: 5000
+      }
+    ]
 
-const cycle = (commit, color = states[0]) => {
-  commit(() => color)
+    const cycle = (commit, color = states[0]) => {
+      commit(() => color)
 
-  setTimeout(() => {
-    const index = states.indexOf(color)
+      setTimeout(() => {
+        const index = states.indexOf(color)
 
-    cycle(commit, index + 1 === states.length ? states[0] : states[index + 1])
-  }, color.duration)
-}
-
-const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
-
-const {lights} = view
-
-framework({
-  state: null,
-  update,
-  component(state, commit) {
-    if (state == null) {
-      setTimeout(() => cycle(commit), 0)
+        cycle(commit, index + 1 === states.length ? states[0] : states[index + 1])
+      }, color.duration)
     }
 
-    return lights`<body>
-        <svg
-          id=lights
-          viewBox="0 0 10 30"
-        >
-          <use
-            y="0"
-            xlink:href="#light"
-            class=${getClass(state, 'red')}
-          />
-          <use
-            y="10"
-            xlink:href="#light"
-            class=${getClass(state, 'yellow')}
-          />
-          <use
-            y="20"
-            xlink:href="#light"
-            class=${getClass(state, 'green')}
-          />
-          <defs>
-            <circle id="light" cx="5" cy="5" r="4" />
-          </defs>
-        </svg>
-      </body>`
-  }
-})
-</script>
+    const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
 
+    const {lights} = view
+
+    framework({
+      state: null,
+      update,
+      component(state, commit) {
+        if (state == null) {
+          setTimeout(() => cycle(commit), 0)
+        }
+
+        return lights`<body>
+            <svg
+              id=lights
+              viewBox="0 0 10 30"
+            >
+              <use
+                y="0"
+                xlink:href="#light"
+                class=${getClass(state, 'red')}
+              />
+              <use
+                y="10"
+                xlink:href="#light"
+                class=${getClass(state, 'yellow')}
+              />
+              <use
+                y="20"
+                xlink:href="#light"
+                class=${getClass(state, 'green')}
+              />
+              <defs>
+                <circle id="light" cx="5" cy="5" r="4" />
+              </defs>
+            </svg>
+          </body>`
+      }
+    })
+    </script>
+  </body>
+</html>
