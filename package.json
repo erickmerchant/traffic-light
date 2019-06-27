@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@erickmerchant/dev-cli": "^8.7.0",
-    "@erickmerchant/framework": "^24.4.5",
-    "@erickmerchant/lint": "^2.5.0",
-    "eslint": "^5.16.0",
+    "@erickmerchant/dev-cli": "^8.7.1",
+    "@erickmerchant/framework": "^24.4.6",
+    "@erickmerchant/lint": "^3.0.0",
+    "eslint": "^6.0.1",
     "stylelint": "^10.1.0"
   },
   "devDependencies": {},
