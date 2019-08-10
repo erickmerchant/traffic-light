@@ -86,7 +86,7 @@
     framework({
       state: null,
       update,
-      component(state, commit) {
+      component({state, commit}) {
         if (state == null) {
           setTimeout(() => cycle(commit), 0)
         }
