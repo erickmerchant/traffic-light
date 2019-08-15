@@ -3,47 +3,47 @@
   <head>
     <meta charset="utf-8"/>
     <style>
-      body {
-        margin: 0;
-      }
+    body {
+      margin: 0;
+    }
 
-      #lights {
-        display: block;
-        margin: 5vh auto;
-        height: 90vh;
-        background-size: 2px 2px;
-        background-color: hsl(0, 0%, 90%);
-        background-image:
-          linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
-          linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
-        border-radius: 1em;
-        border: 2px solid hsl(0, 0%, 50%);
-      }
+    #lights {
+      display: block;
+      margin: 5vh auto;
+      height: 90vh;
+      background-size: 2px 2px;
+      background-color: hsl(0, 0%, 90%);
+      background-image:
+        linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
+        linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
+      border-radius: 1em;
+      border: 2px solid hsl(0, 0%, 50%);
+    }
 
-      #lights use {
-        transition: fill 1s;
-      }
+    #lights use {
+      transition: fill 1s;
+    }
 
-      #light {
-        stroke: hsl(0, 0%, 50%);
-        stroke-width: 0.125;
-      }
+    #light {
+      stroke: hsl(0, 0%, 50%);
+      stroke-width: 0.125;
+    }
 
-      .red {
-        fill: hsla(350, 70%, 60%, 70%);
-      }
+    .red {
+      fill: hsla(350, 70%, 60%, 70%);
+    }
 
-      .yellow {
-        fill: hsla(50, 70%, 60%, 70%);
-      }
+    .yellow {
+      fill: hsla(50, 70%, 60%, 70%);
+    }
 
-      .green {
-        fill: hsla(110, 70%, 60%, 70%);
-      }
+    .green {
+      fill: hsla(110, 70%, 60%, 70%);
+    }
 
-      .gray {
-        fill: hsla(0, 0%, 60%, 70%);
-      }
+    .gray {
+      fill: hsla(0, 0%, 60%, 70%);
+    }
     </style>
   </head>
   <body>
@@ -83,12 +83,16 @@
 
     const {lights} = view
 
+    let initialized = false
+
     framework({
       state: null,
       update,
-      component({state, commit}) {
-        if (state == null) {
-          setTimeout(() => cycle(commit), 0)
+      component({state, commit, next}) {
+        if (!initialized) {
+          initialized = true
+
+          next(() => cycle(commit))
         }
 
         return lights`<body>
