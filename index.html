@@ -83,18 +83,10 @@
 
     const {lights} = view
 
-    let initialized = false
-
-    framework({
+    const commit = framework({
       state: null,
       update,
       component({state, commit, next}) {
-        if (!initialized) {
-          initialized = true
-
-          next(() => cycle(commit))
-        }
-
         return lights`<body>
             <svg
               id=lights
@@ -122,6 +114,8 @@
           </body>`
       }
     })
+
+    cycle(commit)
     </script>
   </body>
 </html>
