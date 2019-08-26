@@ -6,11 +6,13 @@
   "dependencies": {
     "@erickmerchant/dev-cli": "^8.8.0",
     "@erickmerchant/framework": "^25.1.0",
-    "@erickmerchant/lint": "^3.1.1",
+    "@erickmerchant/lint": "^3.1.2",
     "eslint": "^6.2.2",
     "stylelint": "^10.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.0.3"
+  },
   "scripts": {
     "pretest": "lint index.html",
     "test": "exit 0",
