@@ -5,7 +5,7 @@
   "description": "",
   "dependencies": {
     "@erickmerchant/dev-cli": "^8.11.0",
-    "@erickmerchant/framework": "^26.0.0",
+    "@erickmerchant/framework": "^26.0.1",
     "@erickmerchant/lint": "^3.2.0",
     "eslint": "^6.4.0",
     "stylelint": "^11.0.0"
