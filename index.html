@@ -81,7 +81,7 @@
 
     const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
 
-    const {lights} = view
+    const {lights} = view()
 
     const commit = framework({
       state: null,
