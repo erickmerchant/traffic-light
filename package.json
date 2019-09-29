@@ -7,7 +7,7 @@
     "@erickmerchant/dev-cli": "^8.12.0",
     "@erickmerchant/framework": "^27.0.0",
     "@erickmerchant/lint": "^3.2.2",
-    "eslint": "^6.4.0",
+    "eslint": "^6.5.0",
     "stylelint": "^11.0.0"
   },
   "devDependencies": {
