@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@erickmerchant/dev-cli": "^8.14.2",
+    "@erickmerchant/dev-cli": "^8.14.3",
     "@erickmerchant/framework": "^28.0.1",
     "@erickmerchant/lint": "^3.2.2",
     "eslint": "^6.6.0",
