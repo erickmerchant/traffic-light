@@ -5,13 +5,13 @@
   "description": "",
   "dependencies": {
     "@erickmerchant/dev-cli": "^9.0.0",
-    "@erickmerchant/framework": "^29.1.0",
-    "@erickmerchant/lint": "^3.3.0",
-    "eslint": "^6.6.0",
-    "stylelint": "^12.0.0"
+    "@erickmerchant/framework": "^29.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3"
+    "@erickmerchant/lint": "^3.3.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "stylelint": "^12.0.0"
   },
   "scripts": {
     "pretest": "lint index.html",
