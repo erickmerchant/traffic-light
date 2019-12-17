@@ -20,11 +20,8 @@
       border: 2px solid hsl(0, 0%, 50%);
     }
 
-    #lights use {
+    .light {
       transition: fill 1s;
-    }
-
-    #light {
       stroke: hsl(0, 0%, 50%);
       stroke-width: 0.125;
     }
@@ -79,7 +76,7 @@
       }, color.duration)
     }
 
-    const getClass = (state = states[0], val) => (state && state.color === val ? val : 'gray')
+    const getClass = (state = states[0], val) => (state && state.color === val ? `light ${val}` : 'light gray')
 
     const {lights} = view()
 
