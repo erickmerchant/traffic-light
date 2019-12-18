@@ -3,11 +3,15 @@
   <head>
     <meta charset="utf-8"/>
     <style>
-    body {
+    * {
+      box-sizing: border-box;
+      font: inherit;
       margin: 0;
+      padding: 0;
+      max-width: 100%;
     }
 
-    #lights {
+    .lights {
       display: block;
       margin: 5vh auto;
       height: 90vh;
@@ -86,7 +90,7 @@
       component({state, commit, next}) {
         return lights`<body>
             <svg
-              id=lights
+              class="lights"
               viewBox="0 0 10 30"
             >
               <use
