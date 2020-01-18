@@ -47,7 +47,7 @@
       }
     </style>
     <script type="module" crossorigin="anonymous">
-      import framework, {domUpdate, view} from '@erickmerchant/framework'
+      import {render, domUpdate, view} from '@erickmerchant/framework'
 
       const target = document.querySelector('body')
 
@@ -68,7 +68,11 @@
         }
       ]
 
-      const cycle = (commit, color = states[0]) => {
+      const cycle = (commit, color) => {
+        if (color == null) {
+          color = states[0]
+        }
+
         commit(() => color)
 
         setTimeout(() => {
@@ -78,11 +82,11 @@
         }, color.duration)
       }
 
-      const getClass = (state = states[0], val) => (state && state.color === val ? `light ${val}` : 'light gray')
+      const getClass = (state, val) => (state && state.color === val ? `light ${val}` : 'light gray')
 
       const {lights} = view()
 
-      const commit = framework({
+      const commit = render({
         state: null,
         update,
         component({state, commit, next}) {
