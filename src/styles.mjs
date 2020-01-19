@@ -5,6 +5,7 @@ export const _start = `
     margin: 0;
     padding: 0;
     max-width: 100%;
+    border-radius: 1em;
   }
 `
 
@@ -28,10 +29,6 @@ export const styles = {
     background-image:
       linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
     border-top-width: 2px;
     border-bottom-width: 2px;
     border-right-width: 2px;
