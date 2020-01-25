@@ -19,28 +19,16 @@ const light = `
 export const styles = {
   lights: `
     display: block;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 5vh auto;
     height: 90vh;
     background-size: 2px 2px;
     background-color: hsl(0, 0%, 90%);
     background-image:
       linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 2px;
-    border-left-width: 2px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-right-style: solid;
-    border-left-style: solid;
-    border-top-color: hsl(0, 0%, 50%);
-    border-bottom-color: hsl(0, 0%, 50%);
-    border-right-color: hsl(0, 0%, 50%);
-    border-left-color: hsl(0, 0%, 50%);
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(0, 0%, 50%);
   `,
   red: `
     ${light}
