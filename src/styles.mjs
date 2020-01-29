@@ -10,8 +10,7 @@ export const _start = `
 `
 
 const light = `
-  transition-property: fill;
-  transition-duration: 1s;
+  transition: 1s linear fill;
   stroke: hsl(0, 0%, 50%);
   stroke-width: 0.125;
 `
@@ -26,9 +25,7 @@ export const styles = {
     background-image:
       linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
-    border-width: 2px;
-    border-style: solid;
-    border-color: hsl(0, 0%, 50%);
+    border: 2px solid hsl(0, 0%, 50%);
   `,
   red: `
     ${light}
