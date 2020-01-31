@@ -1,4 +1,4 @@
-import {render, domUpdate, view} from '@erickmerchant/framework'
+import {render, domUpdate, html} from '@erickmerchant/framework'
 import {classes} from './out/styles.mjs'
 
 const target = document.querySelector('body')
@@ -34,13 +34,11 @@ const cycle = (commit, color) => {
   }, color.duration)
 }
 
-const {lights} = view()
-
 const commit = render({
   state: null,
   update,
   component({state, commit, next}) {
-    return lights`<body>
+    return html`<body>
         <svg
           class=${classes.lights}
           viewBox="0 0 10 30"
