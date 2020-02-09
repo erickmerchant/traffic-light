@@ -37,27 +37,17 @@ const cycle = (commit, color) => {
 const commit = render({
   state: null,
   update,
-  component({state, commit, next}) {
+  component({state}) {
     return html`<body>
         <svg
           class=${classes.lights}
           viewBox="0 0 10 30"
         >
-          <use
-            y="0"
+          ${['red', 'yellow', 'green'].map((color, index) => html`<use
+            y=${index * 10}
             xlink:href="#light"
-            class=${classes[state && state.color === 'red' ? 'red' : 'gray']}
-          />
-          <use
-            y="10"
-            xlink:href="#light"
-            class=${classes[state && state.color === 'yellow' ? 'yellow' : 'gray']}
-          />
-          <use
-            y="20"
-            xlink:href="#light"
-            class=${classes[state && state.color === 'green' ? 'green' : 'gray']}
-          />
+            class=${classes[state && state.color === color ? color : 'gray']}
+          />`)}
           <defs>
             <circle id="light" cx="5" cy="5" r="4"/>
           </defs>
