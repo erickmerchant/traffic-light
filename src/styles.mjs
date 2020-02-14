@@ -10,7 +10,7 @@ export const _start = `
 `
 
 const light = `
-  transition: 1s linear fill;
+  transition: 1s ease-in fill;
   stroke: hsl(0, 0%, 50%);
   stroke-width: 0.125;
 `
@@ -29,18 +29,18 @@ export const styles = {
   `,
   red: `
     ${light}
-    fill: hsla(350, 70%, 60%, 70%);
+    fill: hsl(350, 70%, 70%);
   `,
   yellow: `
     ${light}
-    fill: hsla(50, 70%, 60%, 70%);
+    fill: hsl(50, 70%, 70%);
   `,
   green: `
     ${light}
-    fill: hsla(110, 70%, 60%, 70%);
+    fill: hsl(110, 70%, 70%);
   `,
   gray: `
     ${light}
-    fill: hsla(0, 0%, 60%, 70%);
+    fill: hsl(0, 0%, 70%);
   `
 }
