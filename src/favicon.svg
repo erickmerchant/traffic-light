@@ -4,10 +4,10 @@
       fill: hsl(350, 60%, 50%);
     }
     circle:nth-of-type(2) {
-      fill: hsl(50, 60%, 50%);
+      fill: hsl(50, 50%, 50%);
     }
     circle:nth-of-type(3) {
-      fill: hsl(110, 60%, 50%);
+      fill: hsl(110, 40%, 50%);
     }
     rect {
       fill: hsl(0, 0%, 90%);
