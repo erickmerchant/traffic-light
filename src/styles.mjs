@@ -27,18 +27,22 @@ export const styles = {
   `,
   red: (styles) => `
     ${styles.light}
+
     fill: hsl(350, 70%, 70%);
   `,
   yellow: (styles) => `
     ${styles.light}
+
     fill: hsl(50, 70%, 70%);
   `,
   green: (styles) => `
     ${styles.light}
+
     fill: hsl(110, 70%, 70%);
   `,
   gray: (styles) => `
     ${styles.light}
+
     fill: hsl(0, 0%, 70%);
   `
 }
