@@ -1,5 +1,5 @@
 import {render, domUpdate, html} from '@erickmerchant/framework'
-import {classes} from './out/styles.mjs'
+import {classes} from './css/styles.mjs'
 
 const target = document.querySelector('body')
 
