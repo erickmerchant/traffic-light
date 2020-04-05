@@ -1,10 +1,6 @@
 import {render, domUpdate, html} from '@erickmerchant/framework'
 import {classes} from './css/styles.mjs'
 
-const target = document.querySelector('body')
-
-const update = domUpdate(target)
-
 const states = [
   {
     color: 'green',
@@ -19,6 +15,10 @@ const states = [
     duration: 5000
   }
 ]
+
+const target = document.querySelector('body')
+
+const update = domUpdate(target)
 
 const cycle = (commit, color) => {
   if (color == null) {
