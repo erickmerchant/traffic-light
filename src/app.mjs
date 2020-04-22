@@ -45,7 +45,7 @@ const commit = render({
         >
           ${['red', 'yellow', 'green'].map((color, index) => html`<use
             y=${index * 10}
-            xlink:href="#light"
+            href="#light"
             class=${classes[state && state.color === color ? color : 'gray']}
           />`)}
           <defs>
