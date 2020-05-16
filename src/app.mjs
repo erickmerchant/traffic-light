@@ -25,7 +25,7 @@ const cycle = (commit, color) => {
     color = states[0]
   }
 
-  commit(() => color)
+  commit(color)
 
   setTimeout(() => {
     const index = states.indexOf(color)
