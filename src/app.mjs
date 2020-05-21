@@ -34,21 +34,25 @@ const cycle = (color) => {
 
 const target = document.querySelector('body')
 
-const view = createDomView(target, (state) => html`<body>
-  <svg
-    class=${classes.lights}
-    viewBox="0 0 10 30"
-  >
-    ${['red', 'yellow', 'green'].map((color, index) => html`<use
-      y=${index * 10}
-      href="#light"
-      class=${classes[state && state.color === color ? color : 'gray']}
-    />`)}
-    <defs>
-      <circle id="light" cx="5" cy="5" r="4"/>
-    </defs>
-  </svg>
-</body>`)
+const view = createDomView(target, (state) => html`
+  <body>
+    <svg
+      class=${classes.lights}
+      viewBox="0 0 10 30"
+    >
+      ${['red', 'yellow', 'green'].map((color, index) => html`
+        <use
+          y=${index * 10}
+          href="#light"
+          class=${classes[state && state.color === color ? color : 'gray']}
+        />
+      `)}
+      <defs>
+        <circle id="light" cx="5" cy="5" r="4"/>
+      </defs>
+    </svg>
+  </body>
+`)
 
 app.render(view)
 
