@@ -14,7 +14,7 @@
     <script type="module">
       import {createDomView, createApp} from '@erickmerchant/framework'
 
-      const app = createApp(0)
+      const app = createApp()
 
       const target = document.querySelector('body')
 
@@ -31,6 +31,14 @@
 
       start()
 
+      const increment = () => {
+        app.commit((state = -1) => state + 1)
+
+        setTimeout(increment, 1000)
+      }
+
+      increment()
+
       const changes = new EventSource('/__changes')
 
       changes.onmessage = (e) => {
@@ -43,14 +51,6 @@
           start(query)
         }
       }
-
-      const cycle = () => {
-        app.commit((state) => state + 1)
-
-        setTimeout(cycle, 1000)
-      }
-
-      setTimeout(cycle, 1000)
     </script>
   </head>
   <body></body>
