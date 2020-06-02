@@ -36,3 +36,13 @@ export const createComponent = (classes) => (state) => html`
     </svg>
   </body>
 `
+
+export const setupApp = (app) => {
+  const increment = () => {
+    app.commit((state = -1) => state + 1)
+
+    setTimeout(increment, 1000)
+  }
+
+  increment()
+}

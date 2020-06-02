@@ -16,9 +16,17 @@
 
       const target = document.querySelector('body')
 
+      let isSetup = false
+
       const start = async (query = '') => {
         const {classes} = await import(`/css/styles.mjs${query}`)
-        const {createComponent} = await import(`/app.mjs${query}`)
+        const {createComponent, setupApp} = await import(`/app.mjs${query}`)
+
+        if (!isSetup) {
+          isSetup = true
+
+          setupApp(app)
+        }
 
         const component = createComponent(classes)
 
@@ -28,14 +36,6 @@
       }
 
       start()
-
-      const increment = () => {
-        app.commit((state = -1) => state + 1)
-
-        setTimeout(increment, 1000)
-      }
-
-      increment()
 
       const changes = new EventSource('/__changes')
 
