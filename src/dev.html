@@ -28,8 +28,10 @@
       let isSetup = false
 
       const start = async (query = '') => {
-        const {classes} = await import(`/css/styles.mjs${query}`)
-        const {createComponent, setupApp} = await import(`/app.mjs${query}`)
+        const [{classes}, {createComponent, setupApp}] = await Promise.all([
+          import(`/css/styles.mjs${query}`),
+          import(`/app.mjs${query}`)
+        ])
 
         if (!isSetup) {
           isSetup = true
