@@ -5,63 +5,35 @@
     <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
     <title>Traffic Light</title>
     <script type="module">
+      import {createContainer} from '@erickmerchant/dev-cli/container.mjs'
       import {createDomView, createApp} from '@erickmerchant/framework'
 
       const app = createApp()
 
       const target = document.querySelector('body')
 
-      const loadCSS = async (query = '') => {
-        const css = await fetch(`/css/styles.css${query}`)
-
-        let oldsheet = document.querySelector('style')
-
-        let stylesheet = document.createElement('style')
-
-        document.head.append(stylesheet)
-
-        stylesheet.textContent = await css.text()
-
-        if (oldsheet) oldsheet.remove()
-      }
-
       let isSetup = false
 
-      const start = async (query = '') => {
-        const [{classes}, {createComponent, setupApp}] = await Promise.all([
-          import(`/css/styles.mjs${query}`),
-          import(`/app.mjs${query}`)
-        ])
+      createContainer(
+        {
+          'css/styles.mjs': 'styles',
+          'main.mjs': 'main'
+        },
+        ['css/styles.css'],
+        async ({main, styles}) => {
+          if (!isSetup) {
+            isSetup = true
 
-        if (!isSetup) {
-          isSetup = true
+            main.setupApp(app)
+          }
 
-          setupApp(app)
+          const component = main.createComponent(styles.classes)
+
+          const view = createDomView(target, component)
+
+          app.render(view)
         }
-
-        const component = createComponent(classes)
-
-        const view = createDomView(target, component)
-
-        app.render(view)
-      }
-
-      loadCSS()
-
-      start()
-
-      const changes = new EventSource('/__changes')
-
-      changes.onmessage = async (e) => {
-        const changes = JSON.parse(e.data)
-        const query = `?${Date.now()}`
-
-        if (changes.file === 'css/styles.css') {
-          await loadCSS(query)
-        }
-
-        start(query)
-      }
+      )
     </script>
   </head>
   <body></body>
