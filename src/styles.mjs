@@ -26,22 +26,22 @@ export const styles = {
       linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
   `,
-  red: (styles) => `
+  red: `
     ${light}
 
     fill: hsl(350, 70%, 70%);
   `,
-  yellow: (styles) => `
+  yellow: `
     ${light}
 
     fill: hsl(50, 70%, 70%);
   `,
-  green: (styles) => `
+  green: `
     ${light}
 
     fill: hsl(110, 70%, 70%);
   `,
-  gray: (styles) => `
+  gray: `
     ${light}
 
     fill: hsl(0, 0%, 70%);
