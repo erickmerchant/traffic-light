@@ -8,6 +8,12 @@ export const _start = `
   }
 `
 
+const light = `
+  transition: 1s ease-in fill;
+  stroke: hsl(0, 0%, 50%);
+  stroke-width: 0.125;
+`
+
 export const styles = {
   lights: `
     display: block;
@@ -20,28 +26,23 @@ export const styles = {
       linear-gradient(to right, hsl(0, 0%, 80%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
   `,
-  light: `
-    transition: 1s ease-in fill;
-    stroke: hsl(0, 0%, 50%);
-    stroke-width: 0.125;
-  `,
   red: (styles) => `
-    ${styles.light}
+    ${light}
 
     fill: hsl(350, 70%, 70%);
   `,
   yellow: (styles) => `
-    ${styles.light}
+    ${light}
 
     fill: hsl(50, 70%, 70%);
   `,
   green: (styles) => `
-    ${styles.light}
+    ${light}
 
     fill: hsl(110, 70%, 70%);
   `,
   gray: (styles) => `
-    ${styles.light}
+    ${light}
 
     fill: hsl(0, 0%, 70%);
   `
