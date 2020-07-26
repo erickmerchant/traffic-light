@@ -9,7 +9,7 @@ export const _start = `
 `
 
 const light = `
-  transition: 1s ease-in fill;
+  transition: var(--transition-duration) ease-in fill;
   stroke: hsl(0, 0%, 50%);
   stroke-width: 0.125;
 `

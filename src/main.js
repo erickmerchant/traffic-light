@@ -19,7 +19,7 @@ const colors = Array.from(new Set(sequence)).reverse()
 export const firstState = 'green'
 
 export const createComponent = (classes) => (state) => html`
-  <body>
+  <body style=${`--transition-duration: ${state ? '1s' : '0s'}`}>
     <svg class=${classes.lights} viewBox=${`0 0 10 ${colors.length * 10}`}>
       ${colors.map(
         (color, index) => html`
