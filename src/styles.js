@@ -4,7 +4,7 @@ export const _start = `
     max-width: 100%;
     margin: 0;
     padding: 0;
-    border-radius: 1em;
+    border-radius: 20% / 10%;
   }
 `
 
