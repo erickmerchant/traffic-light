@@ -18,7 +18,10 @@ export const styles = {
   lights: `
     display: block;
     height: 90vh;
-    margin: 5vh auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-right: auto;
+    margin-left: auto;
     border: 2px solid hsl(0, 0%, 50%);
     background-size: 2px 2px;
     background-color: hsl(0, 0%, 90%);
