@@ -14,7 +14,7 @@ const light = `
   stroke-width: 0.125;
 `
 
-export const styles = {
+export const classes = {
   lights: `
     display: block;
     height: 90vh;
