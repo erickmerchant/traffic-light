@@ -20,20 +20,20 @@ export const firstState = 'green'
 
 export const createComponent = ({classes}) => (state) => html`
   <body style=${`--transition-duration: ${state ? '1s' : '0s'}`}>
-    <svg class=${classes.lights} viewBox=${`0 0 10 ${colors.length * 10}`}>
+    <div class=${classes.lights}>
       ${colors.map(
-        (color, index) => html`
-          <circle
-            r="4"
-            cx="5"
-            cy=${index * 10 + 5}
+        (color) => html`
+          <svg
+            viewBox="0 0 10 10"
             class=${classes[
               sequence[state % sequence.length] === color ? color : 'gray'
             ]}
-          />
+          >
+            <circle r="4" cx="5" cy="5" />
+          </svg>
         `
       )}
-    </svg>
+    </div>
   </body>
 `
 
