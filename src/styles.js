@@ -19,11 +19,11 @@ export const _start = `
 `
 
 const light = `
-  transition: var(--transition-duration) ease-in fill;
   stroke: hsl(0, 0%, 50%);
   stroke-width: 0.125;
   height: 33vmin;
   width: 33vmin;
+  transition: var(--transition-duration) ease-in fill;
 `
 
 export const classes = {
