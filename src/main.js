@@ -39,7 +39,7 @@ export const createComponent = ({classes}) => (state) => html`
 
 export const setupApp = (app) => {
   const increment = () => {
-    app.commit((state = -1) => state + 1)
+    app.state = app.state != null ? app.state + 1 : 0
 
     setTimeout(increment, 1000)
   }
