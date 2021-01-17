@@ -17,14 +17,9 @@
     "@erickmerchant/framework": "^41.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/eslint-parser": "^7.12.1",
     "@erickmerchant/eslint-config": "^2.0.0",
     "@erickmerchant/prettier-config": "^1.2.0",
-    "eslint": "^7.14.0",
-    "eslint-plugin-html": "^6.1.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.2.0"
+    "eslint-plugin-html": "^6.1.1"
   },
   "engines": {
     "node": ">=14.3"
