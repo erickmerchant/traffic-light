@@ -21,14 +21,14 @@ export const _start = `
 const light = `
   stroke: hsl(0, 0%, 50%);
   stroke-width: 0.125;
-  height: 33vmin;
-  width: 33vmin;
+  height: 31vmin;
+  width: 31vmin;
   transition: var(--transition-duration) ease-in fill;
 `
 
 export const classes = {
   lights: `
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     border: 2px solid hsl(0, 0%, 50%);
     background-size: 2px 2px;
