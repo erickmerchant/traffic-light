@@ -18,14 +18,6 @@ export const _start = `
   }
 `
 
-const light = `
-  stroke: hsl(0, 0%, 50%);
-  stroke-width: 0.125;
-  height: 31vmin;
-  width: 31vmin;
-  transition: var(--transition-duration) ease-in fill;
-`
-
 export const classes = {
   lights: `
     display: flex;
@@ -47,24 +39,12 @@ export const classes = {
       border-radius: 20% / 10%;
     }
   `,
-  red: `
-    ${light}
-
-    fill: hsl(350, 70%, 70%);
-  `,
-  yellow: `
-    ${light}
-
-    fill: hsl(50, 70%, 70%);
-  `,
-  green: `
-    ${light}
-
-    fill: hsl(110, 70%, 70%);
-  `,
-  gray: `
-    ${light}
-
-    fill: hsl(0, 0%, 70%);
+  light: `
+    stroke: hsl(0, 0%, 50%);
+    stroke-width: 0.125;
+    height: calc(100vmin / var(--count));
+    width: calc(100vmin / var(--count));
+    transition: var(--transition-duration) ease-in fill;
+    fill: hsl(var(--hue, 0), var(--saturation, 0%), var(--lightness, 70%));
   `
 }
