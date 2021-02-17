@@ -34,16 +34,16 @@ export const classes = {
           transparent 1px
         ),
         linear-gradient(to bottom, hsl(0, 0%, 80%) 1px, transparent 1px);
+    }
 
-      @media (orientation: landscape) {
-        flex-direction: row;
-        border-radius: 10% / 20%;
-      }
+    @media (orientation: landscape) {
+      flex-direction: row;
+      border-radius: 10% / 20%;
+    }
 
-      @media (orientation: portrait) {
-        flex-direction: column;
-        border-radius: 20% / 10%;
-      }
+    @media (orientation: portrait) {
+      flex-direction: column;
+      border-radius: 20% / 10%;
     }
   `,
   light: css`
