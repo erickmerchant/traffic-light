@@ -19,16 +19,14 @@
 
       use('/css/styles.js')
 
-      run(({setupApp, createComponent, classes}) => {
+      run(({setupApp, createView, classes}) => {
         if (!isSetup) {
           isSetup = true
 
           setupApp(app)
         }
 
-        const component = createComponent({classes})
-
-        const view = createDomView(target, component)
+        const view = createDomView(target, createView({classes}))
 
         app.render(view)
       })

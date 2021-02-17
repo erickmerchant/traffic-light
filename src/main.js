@@ -18,7 +18,7 @@ const sequence = [
   red
 ]
 
-export const createComponent = ({classes}) => (state) => {
+export const createView = ({classes}) => (state) => {
   const lights = Array.from({
     *[Symbol.iterator]() {
       let color
