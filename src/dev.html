@@ -5,9 +5,12 @@
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
     <title>Traffic Light</title>
+  </head>
+  <body>
     <script type="module">
-      import {run, use} from '@erickmerchant/dev-cli/runtime.js'
       import {createDomView, createApp} from '@erickmerchant/framework/main.js'
+      import {setupApp, createView} from '/main.js'
+      import {classes} from '/css/styles.js'
 
       const app = createApp()
 
@@ -15,11 +18,7 @@
 
       let isSetup = false
 
-      use('/main.js')
-
-      use('/css/styles.js')
-
-      run(({setupApp, createView, classes}) => {
+      export const __update = () => {
         if (!isSetup) {
           isSetup = true
 
@@ -29,8 +28,9 @@
         const view = createDomView(target, createView({classes}))
 
         app.render(view)
-      })
+      }
+
+      __update()
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
