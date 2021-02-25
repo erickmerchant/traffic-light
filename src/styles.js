@@ -20,8 +20,8 @@ export const _start = css`
   }
 `
 
-export const classes = {
-  lights: css`
+export const classes = css`
+  .lights {
     display: flex;
     flex-direction: column;
     border: 2px solid hsl(0, 0%, 50%);
@@ -43,13 +43,14 @@ export const classes = {
       flex-direction: column;
       border-radius: 20% / 10%;
     }
-  `,
-  light: css`
+  }
+
+  .light {
     stroke: hsl(0, 0%, 50%);
     stroke-width: 0.125;
     height: calc(100vmin / var(--count));
     width: calc(100vmin / var(--count));
     transition: var(--transition-duration) ease-in fill;
     fill: hsl(var(--hue, 0), var(--saturation, 0%), var(--lightness, 70%));
-  `
-}
+  }
+`
