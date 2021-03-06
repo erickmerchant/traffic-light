@@ -12,9 +12,9 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "@erickmerchant/css": "^29.0.0",
-    "@erickmerchant/dev-cli": "^22.0.0",
-    "@erickmerchant/framework": "^41.0.0",
+    "@erickmerchant/css": "^29.2.1",
+    "@erickmerchant/dev-cli": "^22.2.0",
+    "@erickmerchant/framework": "^41.3.0",
     "sergeant": "^29.0.0"
   },
   "devDependencies": {

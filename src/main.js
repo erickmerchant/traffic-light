@@ -53,8 +53,10 @@ export const createView = ({classes}) => (state) => {
 }
 
 export const setupApp = (app) => {
+  app.state = 0
+
   const increment = () => {
-    app.state = app.state != null ? app.state + 1 : 0
+    app.state++
 
     setTimeout(increment, 1000)
   }

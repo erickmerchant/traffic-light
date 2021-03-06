@@ -16,15 +16,9 @@
 
       const target = document.querySelector('body')
 
-      let isSetup = false
+      setupApp(app)
 
       export const __update = () => {
-        if (!isSetup) {
-          isSetup = true
-
-          setupApp(app)
-        }
-
         const view = createDomView(target, createView({classes}))
 
         app.render(view)
