@@ -1,4 +1,4 @@
-import {css} from '@erickmerchant/css/css.js'
+import {css} from '@erickmerchant/css'
 
 export const _start = css`
   * {
