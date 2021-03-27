@@ -1,4 +1,4 @@
-import {html} from '@erickmerchant/framework/main.js'
+import {html} from '@erickmerchant/framework'
 
 const red = `--hue: 350; --saturation: 70%;`
 const yellow = `--hue: 50; --saturation: 70%;`
