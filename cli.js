@@ -3,18 +3,14 @@ import {spawn} from 'sergeant'
 
 const command = process.argv[2]
 
-const program = async () => {
-  try {
-    if (command === 'start') {
-      spawn`css src/styles.js dist/css -dw src`
+try {
+  if (command === 'start') {
+    spawn`css src/styles.js dist/css -dw src`
 
-      spawn`dev serve src dist -de dev.html`
-    }
-  } catch (error) {
-    console.error(error)
-
-    process.exit(1)
+    spawn`dev serve src dist -de dev.html`
   }
-}
+} catch (error) {
+  console.error(error)
 
-program()
+  process.exit(1)
+}
