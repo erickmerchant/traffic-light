@@ -1,8 +1,8 @@
 import {html} from '@erickmerchant/framework'
 
-const red = `--hue: 350; --saturation: 70%;`
-const yellow = `--hue: 50; --saturation: 70%;`
-const green = `--hue: 110; --saturation: 70%;`
+const red = 350
+const yellow = 50
+const green = 110
 
 const sequence = [
   green,
@@ -35,7 +35,7 @@ export const createView = ({classes}) => (state) =>
                     viewBox="0 0 10 10"
                     class=${classes.light}
                     style=${sequence[state % sequence.length] === sequence[i]
-                      ? sequence[i]
+                      ? `--hue: ${sequence[i]}; --saturation: 70%;`
                       : ''}
                   >
                     <circle r="4" cx="5" cy="5" />
