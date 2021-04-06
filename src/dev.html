@@ -11,13 +11,19 @@
       import {createApp, createDomView} from '@erickmerchant/framework'
 
       import {classes} from '/css/styles.js'
-      import {createView, setupApp} from '/main.js'
+      import {createView} from '/view.js'
 
-      const app = createApp()
+      const app = createApp(0)
+
+      const increment = () => {
+        app.state++
+
+        setTimeout(increment, 1000)
+      }
+
+      increment()
 
       const target = document.querySelector('body')
-
-      setupApp(app)
 
       export const __update = () => {
         const view = createDomView(target, createView({classes}))
