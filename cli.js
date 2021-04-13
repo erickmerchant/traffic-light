@@ -7,7 +7,7 @@ try {
   if (command === 'start') {
     spawn`css src/styles.js dist/css -dw src`
 
-    spawn`dev serve src dist -de dev.html`
+    spawn`dev serve src dist -d`
   }
 } catch (error) {
   console.error(error)
