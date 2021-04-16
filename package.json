@@ -14,7 +14,7 @@
   "dependencies": {
     "@erickmerchant/css": "^30.0.0",
     "@erickmerchant/dev-cli": "^22.2.0",
-    "@erickmerchant/framework": "^41.5.0",
+    "@erickmerchant/framework": "^42.0.0",
     "sergeant": "^29.0.0"
   },
   "devDependencies": {
